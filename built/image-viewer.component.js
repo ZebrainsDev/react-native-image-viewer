@@ -34,8 +34,8 @@ var image_viewer_style_1 = require("./image-viewer.style");
 var image_viewer_type_1 = require("./image-viewer.type");
 var ImageViewer = /** @class */ (function (_super) {
     __extends(ImageViewer, _super);
-    function ImageViewer(props) {
-        var _this = _super.call(this, props) || this;
+    function ImageViewer() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = new image_viewer_type_1.State();
         // 背景透明度渐变动画
         _this.fadeAnim = new react_native_1.Animated.Value(0);
@@ -255,9 +255,11 @@ var ImageViewer = /** @class */ (function (_super) {
             }
             _this.handleCancel();
         };
-        _this.init(props);
         return _this;
     }
+    ImageViewer.prototype.componentDidMount = function () {
+        this.init(this.props);
+    };
     ImageViewer.prototype.componentDidUpdate = function () {
         var _this = this;
         if (this.props.index !== this.state.currentShowIndex) {

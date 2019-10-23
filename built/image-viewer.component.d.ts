@@ -14,7 +14,7 @@ export default class ImageViewer extends React.Component<Props, State> {
     private loadedIndex;
     private handleLongPressWithIndex;
     private imageRefs;
-    constructor(props: Props);
+    componentDidMount(): void;
     componentDidUpdate(): void;
     /**
      * props 有变化时执行
